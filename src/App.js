@@ -1,13 +1,12 @@
-import logo from './logo.svg';
+
 import './App.css';
+import { Hello } from './Tutorials/function_components';
 
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>Hellow World</h1>
-      </header>
+      <Hello />
     </div>
   );
 }
