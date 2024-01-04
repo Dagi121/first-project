@@ -1,13 +1,14 @@
 
 import './App.css';
-import Football from './Tutorials/events';
+import Goal from './Tutorials/conditinals';
+//import Garage from './Tutorials/conditinals';
 // import Car from './Tutorials/class_components';
 // import Container from './Tutorials/render';
 
 function App() {
   return (
     <div className="App">
-    <Football />
+    <Goal isGoal={false} />
     </div>
   );
 }
