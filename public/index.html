@@ -2,19 +2,19 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <!-- <link rel="icon" href="%PUBLIC_URL%/favicon.ico" /> -->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <meta
       name="description"
       content="Web site created using create-react-app"
     />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <!-- <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" /> -->
     <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <!-- <link rel="manifest" href="%PUBLIC_URL%/manifest.json" /> -->
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -27,8 +27,53 @@
     <title>React App</title>
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
+    
     <div id="root"></div>
+
+    <script>
+      //spread opretor
+//       const numbersOne = [1, 2, 3];
+// const numbersTwo = [4, 5, 6];
+// const numbersCombined = [numbersOne, numbersTwo];
+
+// document.write(numbersCombined);
+      //this is about arrow function
+      hello = (val) => "Hello " + val;
+      document.write(hello("world!") + "<br>");
+//       function renderApp() {
+//   document.getElementById("demo").innerHTML = "Welcome!";
+// }
+
+// function renderLogin() {
+//   document.getElementById("demo").innerHTML = "Please log in";
+// }
+
+
+// let a = 7;
+// let b = 9;
+
+// a != b ? renderApp() : renderLogin();
+      //this is about class function
+      class Car{
+        constructor(name){
+          this.brand = name;
+        }
+        present(){
+          return 'I have a ' + this.brand;
+        }
+      }
+      class Model extends Car{
+        constructor(name, mod){
+          super(name);
+          this.model = mod;
+        }
+        show(){
+          return this.present() + ' it is a ' + this.model;
+        }
+      }
+      const myCar = new Model('Ford', 'mustang');
+      document.write(myCar.show())
+    </script>
     
     <!--
       This HTML file is a template.
@@ -40,5 +85,33 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+
+    <!-- Distructuing
+    <!DOCTYPE html>
+<html>
+
+<body>
+  
+<script>
+function calculate(a, b) {
+  const add = a + b;
+  const subtract = a - b;
+  const multiply = a * b;
+  const divide = a / b;
+
+  return [add, subtract, multiply, divide];
+}
+
+const [add, subtract, multiply, divide] = calculate(4, 7);
+
+document.write("<p>Sum: " + add + "</p>");
+document.write("<p>Difference " + subtract + "</p>");
+document.write("<p>Product: " + multiply + "</p>");
+document.write("<p>Quotient " + divide + "</p>");
+</script>
+
+</body>
+</html>
+ -->
   </body>
 </html>

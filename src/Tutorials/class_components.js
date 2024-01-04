@@ -1,8 +1,9 @@
-import React, {Component} from 'react';
-class Hi extends Component {
-    render(){
-        return <h1>class component</h1>
-    }
-}
+import React, { Component } from 'react'
 
-export default Hi;
+export default class class_components extends Component {
+  render() {
+    return (
+      <div>class_components</div>
+    )
+  }
+}

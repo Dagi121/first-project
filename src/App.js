@@ -1,18 +1,13 @@
 
 import './App.css';
 import Football from './Tutorials/events';
-import Hello from './Tutorials/function_components';
-import Welcome from './Tutorials/jsx';
-import { Fullname } from './props';
-
+// import Car from './Tutorials/class_components';
+// import Container from './Tutorials/render';
 
 function App() {
   return (
     <div className="App">
-      <Hello />
-      <Welcome />
-      <Fullname />
-      <Football />
+    <Football />
     </div>
   );
 }
