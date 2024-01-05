@@ -23,6 +23,12 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+/* .natty{
+  background-color: red;
+  text-decoration: none;
+  font-size: larger;
+  margin-left: 70px;
+} */
 
 .App-link {
   color: #61dafb;
