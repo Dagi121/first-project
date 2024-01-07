@@ -1,25 +1,21 @@
-import { useState, useEffect, useRef } from "react";
+import { useRef } from "react";
 import ReactDOM from "react-dom/client";
 
 function App() {
-  const [inputValue, setInputValue] = useState("");
-  const count = useRef(0);
+  const inputElement = useRef();
 
-  useEffect(() => {
-    count.current = count.current + 1;
-  });
+  const focusInput = () => {
+    inputElement.current.focus();
+  };
 
   return (
     <>
-      <input
-        type="text"
-        value={inputValue}
-        onChange={(e) => setInputValue(e.target.value)}
-      />
-      <h1>Render Count: {count.current}</h1>
+      <input type="text" ref={inputElement} />
+      <button onClick={focusInput}>Focus Input</button>
     </>
   );
 }
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<App />);
