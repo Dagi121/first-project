@@ -1,29 +1,22 @@
-import { useState } from "react";
+import React from "react";
 import ReactDOM from "react-dom/client";
-import Todos from "./Todos";
 
-const App = () => {
-  const [count, setCount] = useState(0);
-  const [todos, setTodos] = useState([]);
+class Car extends React.Component {
+  render() {
+    return <h2>I am a Car!</h2>;
+  }
+}
 
-  const increment = () => {
-    setCount((c) => c + 1);
-  };
-  const addTodo = () => {
-    setTodos((t) => [...t, "New Todo"]);
-  };
-
-  return (
-    <>
-      <Todos todos={todos} addTodo={addTodo} />
-      <hr />
+class Garage extends React.Component {
+  render() {
+    return (
       <div>
-        Count: {count}
-        <button onClick={increment}>+</button>
+      <h1>Who lives in my Garage?</h1>
+      <Car />
       </div>
-    </>
-  );
-};
+    );
+  }
+}
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<App />);
+root.render(<Garage />);
