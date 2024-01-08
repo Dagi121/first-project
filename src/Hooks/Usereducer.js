@@ -1,23 +1,17 @@
-class Car extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      brand: "Ford",
-      model: "Mustang",
-      color: "red",
-      year: 1964
-    };
-  }
-  render() {
-    return (
-      <div>
-        <h1>My {this.state.brand}</h1>
-        <p>
-          It is a {this.state.color}
-          {this.state.model}
-          from {this.state.year}.
-        </p>
-      </div>
-    );
-  }
+function Garage(props) {
+  const cars = props.cars;
+  return (
+    <>
+      <h1>Garage</h1>
+      {cars.length > 0 &&
+        <h2>
+          You have {cars.length} cars in your garage.
+        </h2>
+      }
+    </>
+  );
 }
+
+const cars = ['Ford', 'BMW', 'Audi'];
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Garage cars={cars} />);

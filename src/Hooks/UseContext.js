@@ -1,32 +1,19 @@
-import React from 'react'
+import React from 'react';
+import ReactDOM from 'react-dom/client';
 
-class Car extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      brand: "Ford",
-      model: "Mustang",
-      color: "red",
-      year: 1964
-    };
+function Football() {
+  const shoot = (a, b) => {
+    alert(b.type);
+		/*
+		'b' represents the React event that triggered the function.
+    In this case, the 'click' event
+		*/
   }
-  changeColor = () => {
-    this.setState({color: "blue"});
-  }
-  render() {
-    return (
-      <div>
-        <h1>My {this.state.brand}</h1>
-        <p>
-          It is a {this.state.color}
-          {this.state.model}
-          from {this.state.year}.
-        </p>
-        <button
-          type="button"
-          onClick={this.changeColor}
-        >Change color</button>
-      </div>
-    );
-  }
+
+  return (
+    <button onClick={(event) => shoot("Goal!", event)}>Take the shot!</button>
+  );
 }
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Football />);
