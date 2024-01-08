@@ -1,17 +1,21 @@
-function Garage(props) {
-  const cars = props.cars;
+import { useState } from 'react';
+import ReactDOM from 'react-dom/client';
+
+function MyForm() {
+  const [name, setName] = useState("");
+
   return (
-    <>
-      <h1>Garage</h1>
-      {cars.length > 0 &&
-        <h2>
-          You have {cars.length} cars in your garage.
-        </h2>
-      }
-    </>
-  );
+    <form>
+      <label>Enter your name:
+        <input
+          type="text" 
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
+      </label>
+    </form>
+  )
 }
 
-const cars = ['Ford', 'BMW', 'Audi'];
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<Garage cars={cars} />);
+root.render(<MyForm />);
