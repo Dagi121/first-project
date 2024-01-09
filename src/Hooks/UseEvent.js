@@ -1,25 +1,26 @@
-import { Outlet, Link } from "react-router-dom";
+import { useState } from "react";
+import ReactDOM from "react-dom/client";
+import Todos from "./Todos";
 
-const Layout = () => {
+const App = () => {
+  const [count, setCount] = useState(0);
+  const [todos, setTodos] = useState(["todo 1", "todo 2"]);
+
+  const increment = () => {
+    setCount((c) => c + 1);
+  };
+
   return (
     <>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/blogs">Blogs</Link>
-          </li>
-          <li>
-            <Link to="/contact">Contact</Link>
-          </li>
-        </ul>
-      </nav>
-
-      <Outlet />
+      <Todos todos={todos} />
+      <hr />
+      <div>
+        Count: {count}
+        <button onClick={increment}>+</button>
+      </div>
     </>
-  )
+  );
 };
 
-export default Layout;
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<App />);

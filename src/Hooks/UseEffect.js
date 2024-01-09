@@ -1,17 +1,13 @@
-import { useState, useEffect } from "react";
-import ReactDOM from "react-dom/client";
+const Todos = ({ todos }) => {
+  console.log("child render");
+  return (
+    <>
+      <h2>My Todos</h2>
+      {todos.map((todo, index) => {
+        return <p key={index}>{todo}</p>;
+      })}
+    </>
+  );
+};
 
-function Timer() {
-  const [count, setCount] = useState(0);
-
-  useEffect(() => {
-    setTimeout(() => {
-      setCount((count) => count + 1);
-    }, 1000);
-  });
-
-  return <h1>I've rendered {count} times!</h1>;
-}
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<Timer />);
+export default Todos;
