@@ -1,19 +1,17 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
+import { useState, useEffect } from "react";
+import ReactDOM from "react-dom/client";
 
-function Football() {
-  const shoot = (a, b) => {
-    alert(b.type);
-		/*
-		'b' represents the React event that triggered the function.
-    In this case, the 'click' event
-		*/
-  }
+function Timer() {
+  const [count, setCount] = useState(0);
 
-  return (
-    <button onClick={(event) => shoot("Goal!", event)}>Take the shot!</button>
-  );
+  useEffect(() => {
+    setTimeout(() => {
+      setCount((count) => count + 1);
+    }, 1000);
+  }, []); // <- add empty brackets here
+
+  return <h1>I've rendered {count} times!</h1>;
 }
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<Football />);
+root.render(<Timer />);

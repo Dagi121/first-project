@@ -1,23 +1,25 @@
-import { useState, useEffect } from "react";
-import ReactDOM from "react-dom/client";
+import { Outlet, Link } from "react-router-dom";
 
-function Counter() {
-  const [count, setCount] = useState(0);
-  const [calculation, setCalculation] = useState(0);
-
-  useEffect(() => {
-    setCalculation(() => count * 2);
-  }, [count]); // <- add the count variable here
-
+const Layout = () => {
   return (
     <>
-      <p>Count: {count}</p>
-      <button onClick={() => setCount((c) => c + 1)}>+</button>
-      <p>Calculation: {calculation}</p>
+      <nav>
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/blogs">Blogs</Link>
+          </li>
+          <li>
+            <Link to="/contact">Contact</Link>
+          </li>
+        </ul>
+      </nav>
+
+      <Outlet />
     </>
-  );
-}
+  )
+};
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<Counter />);
-
+export default Layout;
