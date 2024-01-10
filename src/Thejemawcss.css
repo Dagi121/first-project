@@ -1,0 +1,14 @@
+body{
+    /* box-sizing: border-box; */
+    margin: 0px;
+    padding: 0px;
+}
+div{
+    align-items: center;
+    text-align: center;
+}
+input{
+    width: 25%;
+    height: 40px;
+    padding: 20px;
+}
