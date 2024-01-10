@@ -1,17 +1,16 @@
-import { useState, useEffect } from "react";
-import ReactDOM from "react-dom/client";
+import React, { useState } from 'react';
 
-function Timer() {
-  const [count, setCount] = useState(0);
-
-  useEffect(() => {
-    setTimeout(() => {
-      setCount((count) => count + 1);
-    }, 1000);
-  }, []); // <- add empty brackets here
-
-  return <h1>I've rendered {count} times!</h1>;
+function Hook() {
+    const [color, setColor] = useState(5+6)
+  return (
+    <div>
+        <h1>my foverite color is {color}</h1>
+        <button onClick={() => setColor("blue")}>blue</button>
+        <button onClick={() => setColor("yellow")}>yellow</button>
+        <button onClick={() => setColor("green")}>green</button>
+    </div>
+  )
 }
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<Timer />);
+export default Hook
+
